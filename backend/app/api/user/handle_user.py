@@ -13,12 +13,12 @@ def userLogin():
     response['token'] = generate_token(username)
     return jsonify(response)
 
-@api_blueprint.route('/user/info',methods=['POST'])
+@api_blueprint.route('/user/info',methods=['GET','POST'])
 def userInfo():
     response = {}
     response['code'] = 0
     response['message'] = 'user info'
-    data = request.get_json()
+    # data = request.get_json()
     response['name'] = 'admin'
     response['avatar'] = 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif'
     response['introduction'] = 'bbb'
